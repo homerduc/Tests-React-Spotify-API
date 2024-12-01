@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 const clientId = "20ff08bc03f0408ab60988183f660959";
-const redirectUri = "http://localhost:3000/callback";
+const redirectUri = `${window.location.origin}/callback`;
 const scopes = ["user-read-private", "user-read-email", "user-library-read"];
 
 const SpotifyLogin = () => {
@@ -21,6 +21,7 @@ const SpotifyLogin = () => {
     if (isLoggedIn) {
         return (
             <div>
+                <h2 className="text-3xl font-bold text-green-400 flex justify-center">Spotify Login</h2>
                 <p className="text-2xl font-bold m-4 text-gray-200 flex justify-center">You are logged in</p>
                 <div className="flex justify-center">
                     <button onClick={() => {

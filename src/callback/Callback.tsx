@@ -17,7 +17,7 @@ const Callback: React.FC = () => {
 
     return (
         <div className="flex justify-center items-center h-screen">
-            <p>Logging in...</p>
+            <p className="text-2xl flex justify-center font-bold m-4 text-gray-200">Logging in...</p>
         </div>
     );
 };

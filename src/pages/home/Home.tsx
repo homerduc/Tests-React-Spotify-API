@@ -8,7 +8,7 @@ function Home() {
     const accessToken = localStorage.getItem("spotifyAccessToken");
 
     useEffect(() => {
-        if (accessToken) {
+        if (accessToken) { // This block of code is used to fetch user data from Spotify
             fetch("https://api.spotify.com/v1/me", {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
@@ -34,7 +34,7 @@ function Home() {
 
     return (
         <div>
-            <h2 className="text-3xl underline text-green-400 flex justify-center">Home</h2>
+            <h2 className="text-3xl text-green-400 font-bold flex justify-center">Home</h2>
             {userData ? (
 
                 <div>
@@ -42,7 +42,7 @@ function Home() {
                 </div>
 
             ) : (
-                <p>Log in to see your Spotify data</p>
+                <h2 className="text-2xl flex justify-center font-bold m-4 text-gray-200">Log in to see your Spotify data</h2>
             )}
         </div>
     );
