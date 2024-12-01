@@ -69,6 +69,6 @@ function Playlists() {
             )}
         </div>
     );
-};
+}
 
 export default Playlists;
