@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Link} from "react-router-dom";
 
 interface Playlist {
     id: string;
@@ -47,10 +48,10 @@ function Playlists() {
             <h1 className="text-3xl text-green-400 font-bold flex justify-center">Your public playlists</h1>
             {playlists.length > 0 ? (
                 <ul>
-                    {playlists.map((playlist => (
+                    {playlists.map((playlist => ( // Loops on all the user public playlists
                         playlist && ( // Check if playlist is not null, it is when the page is first loaded
                             <li key={playlist.id} className="mb-4 flex justify-center">
-                                <div className="flex-col flex items-center m-3">
+                                <Link to={`/playlist/${playlist.id}`} className="flex-col flex items-center m-3">
                                     {playlist.images.length > 0 && (
                                         <img
                                             src={playlist.images[0].url}
@@ -59,7 +60,7 @@ function Playlists() {
                                         />
                                     )}
                                     <span className="text-2xl text-gray-200">{playlist.name}</span>
-                                </div>
+                                </Link>
                             </li>
                         )
                     )))}

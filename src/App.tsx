@@ -5,6 +5,7 @@ import Home from './pages/home/Home';
 import About from './pages/about/About';
 import SpotifyLogin from "./pages/spotifyLogin/SpotifyLogin";
 import Playlists from "./pages/playlists/Playlists";
+import PlaylistDetails from "./pages/playlistDetails/PlaylistDetails";
 
 import Callback from "./callback/Callback";
 
@@ -37,6 +38,7 @@ function App() {
                         <Route path="about" element={<About/>}/>
                         <Route path="spotifyLogin" element={<SpotifyLogin/>}/>
                         <Route path="playlists" element={<Playlists/>}/>
+                        <Route path={"playlist/:id"} element={<PlaylistDetails/>}/> {/* Pour l'instant ça change rien */}
 
                         <Route path="callback" element={<Callback/>}/> {/* Route callback */}
                     </Routes>
